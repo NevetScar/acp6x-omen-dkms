@@ -1,0 +1,1 @@
+This patch for the AMD Yellow Carp Audio Driver in the linux kernel is meant to add Revision 62 of Board id 15E2 that defaults to the Raphael driver snd-rpl-pci-acp6x driver which is feature incomplete. It was tested on an Omen 16 board number 8E35 and added this specific laptop to the quirks list. Other boards can be added in a similar fashion to add microphone functionality.
