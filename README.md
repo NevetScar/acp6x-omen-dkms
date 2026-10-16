@@ -15,3 +15,10 @@ This patch fixes the audio driver selection logic in the Linux kernel, specifica
 ## 🤝 Extending Support
 
 This patch adds the OMEN 16 to the driver's quirk table. If you have a similar AMD-based laptop with non-functional microphones, you can easily add your own Board ID to the quirks list following the pattern established in this patch.
+
+## Add support for HP board 8F06 (HyperX OMEN 16-ap1xxx)
+- Add DMI quirk entry for HP board 8F06 (HyperX OMEN Gaming Laptop
+  16-ap1xxx) so the acp6x DMIC capture card gets registered
+- Probe the DMI quirk table before evaluating ACPI _WOV: on this
+  machine _WOV returns 0 early in boot, which previously made the
+  driver bail out before the DMI check
